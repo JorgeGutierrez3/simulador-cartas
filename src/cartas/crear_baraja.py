@@ -1,4 +1,4 @@
-from crear_cartas import Carta
+from .crear_cartas import Carta
 import random
 
 class Baraja():
