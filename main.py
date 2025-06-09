@@ -1,5 +1,5 @@
-from crear_cartas import Carta 
-from crear_baraja import Baraja
+from cartas import Carta 
+from cartas import Baraja
 
 def main():
     baraja = Baraja()
