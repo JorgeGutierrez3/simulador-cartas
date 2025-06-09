@@ -1,7 +1,9 @@
 from crear_cartas import Carta 
+from crear_baraja import Baraja
 
 def main():
-    cartas = Carta(3,'Corazon')
-    print(cartas)
+    baraja = Baraja()
+    baraja.barajar()
+    print(f"Cartas repartidas: {baraja.repartir(5)}")
 
 if __name__ == "__main__": main()
