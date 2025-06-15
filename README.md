@@ -78,6 +78,8 @@ print(f"Resultado: {resultado}")  # Devuelve el tipo de mano (ej. par, full hous
 ## Ejemplo completo
 
 ```python
+from cartas import Baraja, Analizar
+
 def main():
     baraja = Baraja(num_barajas=1)
     baraja.barajar()
