@@ -28,23 +28,17 @@ simulador-cartas/
 1. **Clona el repositorio:**
    ```bash
    git clone https://github.com/JorgeGutierrez3/simulador-cartas.git
-   cd simulador-cartas
    ```
 
 2. **Crea y activa un entorno virtual:**
    ```bash
    python -m venv venv
-
-   # En Windows
    venv\Scripts\activate
-
-   # En macOS/Linux
-   source venv/bin/activate
    ```
 
 3. **Instala la librería en modo desarrollo:**
    ```bash
-   pip install -e .
+   pip install -e simulador-cartas
    ```
 
 ##  Uso
@@ -75,7 +69,7 @@ resultado = Analizar(mano)
 print(f"Resultado: {resultado}")  # Devuelve el tipo de mano (ej. par, full house, etc.)
 ```
 
-## Ejemplo completo
+## Ejemplo completo de una mano de Póker
 
 ```python
 from cartas import Baraja, Analizar
