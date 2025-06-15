@@ -1,15 +1,13 @@
-# Simulador-cartas
-Una libreria que simula el juego de cartas tradicional Póker. 
+# Simulador de Cartas – Póker
+
+Una librería en Python que simula el tradicional juego de cartas **Póker**. Permite crear cartas, barajas y evaluar manos de forma sencilla y extensible.
 
 ## Características
 
-### Cartas
-Las cartas tienen tres atributos principales, su palo, su número y el valor real de su número, ejemplo: Q --> 12, K --> 13.  
-
-### Funciones básicas
-- Crear Cartas.
-- Crear Bajara.
-- Evaluar Mano.
+- Generación de cartas con palo, valor y nombre.
+- Creación y mezcla de una o más barajas.
+- Evaluación de manos de Póker (escalera, color, par, etc.).
+- Fácil de integrar y personalizar.
 
 ## Estructura del Proyecto
 
@@ -17,57 +15,76 @@ Las cartas tienen tres atributos principales, su palo, su número y el valor rea
 simulador-cartas/
 ├── src/
 │   └── cartas/
-│       ├── crear_baraja.py
-│       ├── crear_cartas.py
-│       └── evaluar_mano.py
-├── setup.py
+│       ├── crear_baraja.py       # Lógica para crear y manejar barajas
+│       ├── crear_cartas.py       # Definición de cartas individuales
+│       └── evaluar_mano.py       # Análisis de manos de Póker
+├── main.py                       # Ejemplo de ejecución
+├── setup.py                      # Configuración del paquete
 └── README.md
 ```
 
-## Uso
+## Instalación
 
-### Calculadora Básica
-```python
-from calculadora import CalculadoraBasica
+1. **Clona el repositorio:**
+   ```bash
+   git clone https://github.com/tu_usuario/simulador-cartas.git
+   cd simulador-cartas
+   ```
 
-# Crear una instancia de la calculadora básica
-calc_basica = CalculadoraBasica()
-
-# Realizar operaciones
-resultado = calc_basica.sumar(5, 3)  # Retorna 8
-resultado = calc_basica.restar(10, 4)  # Retorna 6
-resultado = calc_basica.multiplicar(2, 3)  # Retorna 6
-resultado = calc_basica.dividir(10, 2)  # Retorna 5.0
-```
-
-### Calculadora Trigonométrica
-```python
-from calculadora import CalculadoraTrigonometrica
-import math
-
-# Crear una instancia de la calculadora trigonométrica
-calc_trig = CalculadoraTrigonometrica()
-
-# Realizar operaciones trigonométricas
-resultado = calc_trig.seno(math.pi/2)  # Retorna 1.0
-resultado = calc_trig.coseno(0)  # Retorna 1.0
-resultado = calc_trig.tangente(math.pi/4)  # Retorna 1.0
-
-# Convertir entre grados y radianes
-radianes = calc_trig.grados_a_radianes(180)  # Retorna π
-grados = calc_trig.radianes_a_grados(math.pi)  # Retorna 180.0
-```
-
-## Desarrollo
-
-1. Clona este repositorio
-
-2. Crea y activa un entorno virtual:
+2. **Crea y activa un entorno virtual:**
    ```bash
    python -m venv venv
+
+   # En Windows
    venv\Scripts\activate
+
+   # En macOS/Linux
+   source venv/bin/activate
    ```
-3. Instala el paquete en modo desarrollo:
+
+3. **Instala la librería en modo desarrollo:**
    ```bash
-   pip install -e simulador-cartas
+   pip install -e .
    ```
+
+##  Uso
+
+###  Crear una carta
+```python
+from cartas import Carta
+
+carta = Carta()
+print(carta)
+```
+
+###  Crear y usar una baraja
+```python
+from cartas import Baraja
+
+baraja = Baraja(num_barajas=2)  # Crear 2 barajas
+baraja.barajar()                # Mezclar las cartas
+mano = baraja.repartir(5)       # Repartir 5 cartas
+```
+
+### Analizar una mano
+```python
+from cartas import Analizar
+
+mano = baraja.repartir(5)
+resultado = Analizar(mano)
+print(f"Resultado: {resultado}")  # Devuelve el tipo de mano (ej. par, full house, etc.)
+```
+
+## Ejemplo completo
+
+```python
+def main():
+    baraja = Baraja(num_barajas=1)
+    baraja.barajar()
+    mano = baraja.repartir(5)
+    resultado = Analizar(mano)
+    print(f"Resultado: {resultado}")
+
+if __name__ == "__main__":
+    main()
+```
