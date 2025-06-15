@@ -5,9 +5,9 @@ class Baraja():
     def __init__(self, num_barajas=1):
         self.cartas = []
         for i in range(num_barajas):
-            for pica in Carta.PICAS:
+            for palo in Carta.PALOS:
                 for numero, valor in Carta.NUMEROS.items():
-                    self.cartas.append(Carta(numero, pica, valor))
+                    self.cartas.append(Carta(numero, palo, valor))
 
     def __str__(self):
         return ', '.join(str(carta) for carta in self.cartas)
