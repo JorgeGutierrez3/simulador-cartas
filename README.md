@@ -27,7 +27,7 @@ simulador-cartas/
 
 1. **Clona el repositorio:**
    ```bash
-   git clone https://github.com/tu_usuario/simulador-cartas.git
+   git clone https://github.com/JorgeGutierrez3/simulador-cartas.git
    cd simulador-cartas
    ```
 
