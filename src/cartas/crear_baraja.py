@@ -2,11 +2,12 @@ from .crear_cartas import Carta
 import random
 
 class Baraja():
-    def __init__(self):
+    def __init__(self, num_barajas=1):
         self.cartas = []
-        for pica in Carta.PICAS:
-            for numero in Carta.NUMEROS:
-                self.cartas.append(Carta(numero, pica))
+        for i in range(num_barajas):
+            for pica in Carta.PICAS:
+                for numero, valor in Carta.NUMEROS.items():
+                    self.cartas.append(Carta(numero, pica, valor))
 
     def __str__(self):
         return ', '.join(str(carta) for carta in self.cartas)
@@ -19,4 +20,4 @@ class Baraja():
             raise ValueError("No hay suficientes cartas en la baraja.")
         repartidas = self.cartas[:num_cartas]
         self.cartas = self.cartas[num_cartas:]
-        return ', '.join(str(carta) for carta in repartidas)
+        return repartidas

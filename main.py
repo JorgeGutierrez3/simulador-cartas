@@ -1,9 +1,16 @@
-from cartas import Carta 
-from cartas import Baraja
+from src.cartas.crear_cartas import Carta 
+from src.cartas.crear_baraja import Baraja
+from src.cartas.evaluar_mano import Analizar
 
 def main():
-    baraja = Baraja()
+    baraja = Baraja(num_barajas=100)
     baraja.barajar()
-    print(f"Cartas repartidas: {baraja.repartir(5)}")
+    while True:
+        baraja.barajar()
+        mano = baraja.repartir(5)
+        resultado = Analizar(mano).mejor_mano
+        print(f"Resultado: {resultado}")
+        if resultado.__contains__("Pareja"):
+            break
 
 if __name__ == "__main__": main()
