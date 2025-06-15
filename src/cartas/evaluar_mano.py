@@ -1,5 +1,5 @@
 from collections import Counter
-from .crear_cartas import Carta
+
 class Analizar():
     def __init__(self, cartas):
         self.cartas = cartas
@@ -11,7 +11,6 @@ class Analizar():
         orden = sorted([(carta.valor) for carta in self.cartas], reverse=True)
         self.cartas.sort(key=lambda carta: carta.valor, reverse=True)
         print(', '.join(str(carta) for carta in self.cartas))
-        #print(f"Frecuencias de cartas: {(cuenta)}") 
 
         if list(frequencias.values()) == [4, 1]:
             self.mejor_mano = "Póker de " + list(frequencias.keys())[0]
