@@ -33,5 +33,5 @@ class Analizar():
         else:
             self.mejor_mano = "Carta Alta"
         return self.mejor_mano
-            
+    def __str__(self): return f"Mano: {self.mejor_mano}"
 
