@@ -1,6 +1,5 @@
-from src.cartas.crear_cartas import Carta 
-from src.cartas.crear_baraja import Baraja
-from src.cartas.evaluar_mano import Analizar
+from cartas import Baraja
+from cartas import Analizar
 
 def main():
     baraja = Baraja(num_barajas=2)
